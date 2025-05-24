@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#000000"/>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <script defer src="js/app.js"></script>
+  <title>Brigade de Nuit</title>
+</head>
+<body class="dark-mode">
+  <div id="login-container">
+    <h1>Connexion</h1>
+    <input type="password" id="password" placeholder="Matricule" autofocus>
+    <button onclick="checkPassword()">Connexion</button>
+    <p id="login-error" class="hidden">Mot de passe incorrect</p>
+  </div>
+  <div id="main-app" class="hidden">
+    <header>
+      <img src="assets/ecusson.png" alt="Ecusson Brigade" class="logo"/>
+      <h1 id="agent-name">Brigade de Nuit</h1>
+      <label class="switch">
+        <input type="checkbox" id="night-mode-toggle">
+        <span class="slider round"></span>
+      </label>
+    </header>
+    <nav>
+      <select onchange="navigateTo(this.value)">
+        <option disabled selected>Menu</option>
+        <option value="pages/contact.html">Contact Interne</option>
+        <option value="pages/cartographie.html">Cartographie</option>
+        <option value="pages/natinf.html">Natinf</option>
+        <option value="pages/fiches.html">Fiches Réflexes</option>
+        <option value="pages/codedanger.html">Code Danger</option>
+        <option value="pages/fauxdocuments.html">Faux Documents</option>
+        <option value="pages/secourisme.html">Secourisme</option>
+        <option value="pages/annuaire.html">Annuaire Commerçants</option>
+        <option value="pages/pie.html">Fiche Usage PIE</option>
+        <option value="pages/at.html">Fiche AT</option>
+      </select>
+    </nav>
+    <main>
+      <p>Bienvenue dans l'application de la Brigade de Nuit.</p>
+      <button onclick="sendEmergency()">Urgence Géolocalisation</button>
+    </main>
+  </div>
+</body>
+</html>
